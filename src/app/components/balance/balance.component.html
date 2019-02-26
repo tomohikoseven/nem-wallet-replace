@@ -1,0 +1,13 @@
+<li ngbDropdown id="balanceDropdown" class="money dropdown" ShowAuthed="true">
+<!-- <li id="balanceDropdown" class="money dropdown" show-authed="true"> -->
+  <a ngbDropdownToggle href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+    <b><small>{{balance}} {{selectedMarket}}</small></b> <span class="caret"></span>
+  </a>
+  <ul ngbDropdownMenu class="dropdown-menu" style="z-index: 99;min-width: 100%;width: 100%;">
+    <li class="dropdown-item" *ngFor="let key of markets" class="text-center" style="cursor:pointer;" (click)="updateBalance(key);">
+      <a><b><small>{{key}}</small></b></a>
+    </li>
+  </ul>
+<!-- </li> -->
+</li>
+

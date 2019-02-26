@@ -1,4 +1,5 @@
-export const AppConfig = {
-  production: false,
-  environment: 'LOCAL'
+export class AppConfig {
+  public static production  = false;
+  public static environment = 'LOCAL';
+  public static defaultLang = 'jp';
 };
