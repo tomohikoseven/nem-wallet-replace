@@ -5,7 +5,7 @@ import nem from 'nem-sdk';
 // service
 import { WalletService } from '../../providers/wallet.service';
 import { AlertService } from '../../providers/alert.service';
-import { StorageService } from '../../providers/local-storage.service';
+import { LocalStorageService } from '../../providers/local-storage.service';
 import { LoginService } from '../../providers/login.service';
 
 // class 
@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
   rawWallet: string;
 
   constructor(
-    private _storage: StorageService,
+    private _storage: LocalStorageService,
     private _alert: AlertService,
     private _Wallet: WalletService,
     private _Login: LoginService

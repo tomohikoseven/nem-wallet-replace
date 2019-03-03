@@ -3,7 +3,7 @@ import qrcode from 'qrcode-generator-es6/qrcode_UTF8';
 import nem from 'nem-sdk';
 
 // service
-import { StorageService } from './local-storage.service';
+import { LocalStorageService } from './local-storage.service';
 import { WalletService } from './wallet.service';
 
 // class
@@ -15,7 +15,7 @@ import { NtyData } from '../class';
 export class NtyService {
 
   constructor(
-    private _storage: StorageService,
+    private _storage: LocalStorageService,
     private _Wallet:  WalletService
   ) { }
 

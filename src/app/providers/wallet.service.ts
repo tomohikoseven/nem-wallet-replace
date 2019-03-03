@@ -3,7 +3,7 @@ import { DOCUMENT } from '@angular/common';
 
 import { kjua } from 'kjua';
 
-import { StorageService } from './local-storage.service';
+import { LocalStorageService } from './local-storage.service';
 import { AppConstants } from '../config/app.constants';
 import { AlertService } from './alert.service';
 import { AddressBookService } from './address-book.service';
@@ -37,7 +37,7 @@ export class WalletService {
   constructor(
     //// Service dependencies region ////
     @Inject(DOCUMENT) document,
-    private _storage: StorageService,
+    private _storage: LocalStorageService,
     private _Alert: AlertService,
     private _AddressBook: AddressBookService,
     private _DataStore: DataStoreService

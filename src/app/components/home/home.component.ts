@@ -5,7 +5,7 @@ import { DOCUMENT } from '@angular/common';
 import nem from 'nem-sdk';
 
 // service
-import { StorageService } from '../../providers/local-storage.service';
+import { LocalStorageService } from '../../providers/local-storage.service';
 
 // config
 import { AppConstants } from '../../config/app.constants';
@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
 
   constructor( 
     private http: Http,
-    private _storage: StorageService,
+    private _storage: LocalStorageService,
     @Inject(DOCUMENT) document
   ) { 
     

@@ -2,7 +2,7 @@ import { Component, OnInit, Inject, HostListener, Renderer2 } from '@angular/cor
 import { DOCUMENT } from '@angular/common';
 
 // Service
-import { StorageService } from '../../providers/local-storage.service';
+import { LocalStorageService } from '../../providers/local-storage.service';
 import { AlertService } from '../../providers/alert.service';
 import { WalletBuilderService } from '../../providers/wallet-builder.service';
 import { WalletService } from '../../providers/wallet.service';
@@ -86,7 +86,7 @@ export class SignupComponent implements OnInit {
   getEntropyFunc: Function;
 
   constructor(
-    private _storage: StorageService,
+    private _storage: LocalStorageService,
     private _Alert: AlertService,
     private _WalletBuilder: WalletBuilderService,
     private _Wallet: WalletService,

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { StorageService } from './local-storage.service';
+import { LocalStorageService } from './local-storage.service';
 
 import nem from 'nem-sdk';
 
@@ -12,7 +12,7 @@ import { Wallet, Account, Contact } from '../class';
 export class AddressBookService {
 
   constructor(
-    private _storage: StorageService
+    private _storage: LocalStorageService
   ){
 
   /**

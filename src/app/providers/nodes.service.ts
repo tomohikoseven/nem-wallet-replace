@@ -3,7 +3,7 @@ import nem from 'nem-sdk';
 import UrlParser from 'url-parse';
 
 import { WalletService } from './wallet.service';
-import { StorageService } from './local-storage.service';
+import { LocalStorageService } from './local-storage.service';
 import { AlertService } from './alert.service';
 
 @Injectable({
@@ -12,7 +12,7 @@ import { AlertService } from './alert.service';
 export class NodesService {
 
   constructor(
-    private _storage : StorageService,
+    private _storage : LocalStorageService,
     private _Wallet: WalletService,
     private _Alert: AlertService
     ) { }

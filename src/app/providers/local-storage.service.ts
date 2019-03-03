@@ -1,14 +1,17 @@
-import { Injectable } from '@angular/core';
-import { LocalStorageService } from 'angular-2-local-storage';
+import { Inject, Injectable, InjectionToken } from '@angular/core';
 
 // class
 import { Wallet, Endpoint, Contact, NtyData } from '../class';
-//import * from '../class';
+
+export const BROWSER_STORAGE = new InjectionToken<Storage>('Browser Storage', {
+  providedIn: 'root',
+  factory: () => localStorage
+});
 
 @Injectable({
   providedIn: 'root'
 })
-export class StorageService {
+export class LocalStorageService {
   contacts: Contact[][];
   wallets:Wallet[];
   lang: string;
@@ -18,8 +21,22 @@ export class StorageService {
   ntyMainnet:NtyData;
   ntyTestnet:NtyData;
   ntyMijin:NtyData;
+  
+  constructor(@Inject(BROWSER_STORAGE) public storage: Storage) {}
 
-  constructor(
-    private _local: LocalStorageService
-  ) { }
+  getItem(key: string) {
+    this.storage.getItem(key);
+  }
+
+  setItem(key: string, value: string) {
+    this.storage.setItem(key, value);
+  }
+
+  removeItem(key: string) {
+    this.storage.removeItem(key);
+  }
+
+  //clear() {
+  //  this.storage.clear();
+  //}
 }

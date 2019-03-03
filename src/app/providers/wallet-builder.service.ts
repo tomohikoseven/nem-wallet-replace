@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import nem from 'nem-sdk';
 
 // Service
-import { StorageService } from './local-storage.service';
+import { LocalStorageService } from './local-storage.service';
 import { AlertService } from './alert.service';
 
 // class
@@ -19,7 +19,7 @@ export class WalletBuilderService {
 
   constructor(
     private _Alert: AlertService,
-    private _storage: StorageService
+    private _storage: LocalStorageService
   ) { 
     //// Service properties region ////
 

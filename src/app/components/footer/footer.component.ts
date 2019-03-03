@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppConstants } from '../../config/app.constants';
 import { AlertService } from '../../providers/alert.service';
-import { StorageService } from '../../providers/local-storage.service';
+import { LocalStorageService } from '../../providers/local-storage.service';
 
 @Component({
   selector: 'app-footer',
@@ -13,7 +13,7 @@ export class FooterComponent implements OnInit {
   //AppConstants:any;
   appConstants:any;
   constructor(
-    private _storage: StorageService,
+    private _storage: LocalStorageService,
     private _Alert: AlertService
     ) { 
     this.appConstants = AppConstants;

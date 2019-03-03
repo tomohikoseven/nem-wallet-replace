@@ -18,9 +18,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { ToastrModule } from 'ngx-toastr';
-import { LocalStorageModule } from 'angular-2-local-storage';
-
-
 
 // NG Translate
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -33,7 +30,7 @@ import { RecipientService } from './providers/recipient.service';
 import { AlertService } from './providers/alert.service';
 import { FiltersService } from './providers/filters.service';
 import { AddressBookService } from './providers/address-book.service';
-import { StorageService } from './providers/local-storage.service';
+import { LocalStorageService } from './providers/local-storage.service';
 import { WalletService } from './providers/wallet.service';
 import { DataBridgeService } from './providers/data-bridge.service';
 import { WalletBuilderService } from './providers/wallet-builder.service';
@@ -62,6 +59,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { ToNetworkNamePipe } from './pipes/to-network-name.pipe';
 import { FmtAddressPipe } from './pipes/fmt-address.pipe';
 import { HashKeyvaluePipe } from './pipes/hash-keyvalue.pipe';
+import { ReadWalletFilesDirective } from './directives/read-wallet-files.directive';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -85,7 +83,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     SignupComponent,
     ToNetworkNamePipe,
     FmtAddressPipe,
-    HashKeyvaluePipe
+    HashKeyvaluePipe,
+    ReadWalletFilesDirective
   ],
   imports: [
     BrowserModule,
@@ -104,10 +103,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    LocalStorageModule.withConfig({
-         prefix: 'nemWallet',
-         storageType: 'localStorage'
-    }),
     BsDropdownModule.forRoot(),
     ButtonsModule.forRoot()
   ],
@@ -117,7 +112,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     RecipientService,
     AlertService,
     FiltersService,
-    StorageService,
+    LocalStorageService,
     WalletService,
     DataBridgeService,
     WalletBuilderService,

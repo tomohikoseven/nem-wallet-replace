@@ -8,7 +8,7 @@ import { AppConfig } from '../../../environments/environment';
 import { DataStoreService } from '../../providers/data-store.service';
 import { WalletService } from '../../providers/wallet.service';
 import { AlertService } from '../../providers/alert.service';
-import { StorageService } from '../../providers/local-storage.service';
+import { LocalStorageService } from '../../providers/local-storage.service';
 import { DataBridgeService } from '../../providers/data-bridge.service';
 import { Languages } from '../../config/languages';
 
@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
   languages: Array<{name:string, key:string}>;
 
   constructor( 
-    public _storage: StorageService,
+    public _storage: LocalStorageService,
     private _Alert: AlertService,
     public _Wallet: WalletService,
     public _DataStore: DataStoreService,
